@@ -20,7 +20,8 @@ export function Main() {
       },
       params: {
         q: albumName,
-        type: 'album'
+        type: 'album',
+        limit: 10
       }
     });
 

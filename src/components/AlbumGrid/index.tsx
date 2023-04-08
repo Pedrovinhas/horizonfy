@@ -5,7 +5,7 @@ export function AlbumGrid({ name, id, artist, images, release_date, total_tracks
   return (
     <Link 
       to={`album/${id}/${name}`} 
-      className='w-52 h-72 p-2 gap-4 bg-gradient-800 rounded-md flex flex-col items-center transition-transform cursor-pointer hover:bg-zinc-800'>
+      className='w-52 h-72 p-2 gap-4 bg-gradient-800 rounded-md flex flex-col items-center transition duration-200 ease-in cursor-pointer hover:bg-zinc-800'>
       <img src={images[0].url} alt={`Capa do álbum ${name}`} className='mt-4 w-40 h-40 rounded-md '/>
       <div className='flex flex-col justify-center w-40 gap-1'>
         <span>

@@ -80,8 +80,8 @@ export function TrackDetails({ trackId, name, preview_url }: TrackDetails) {
         <ArrowUpRight size={24} color="#ffffff" className='pointer'/>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className='bg-opacity-50 bg-black top-0 left-0 right-0 bottom-0 grid place-items-center overflow-y-auto fixed z-20'/>
-        <Dialog.Content className='bg-neutral-800 h-4/6 rounded-lg top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] h-3/5 w-2/5 grid place-items-center fixed z-50'>
+        <Dialog.Overlay className='animate-overlayShow bg-opacity-50 bg-black top-0 left-0 right-0 bottom-0 grid place-items-center overflow-y-auto fixed z-20'/>
+        <Dialog.Content className='animate-contentShow bg-neutral-800 h-4/6 rounded-lg top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] h-3/5 w-2/5 grid place-items-center fixed z-50'>
           <Dialog.Title className='mt-8 h-16' >
             <span className='text-2xl font-bold text-gray-50'>
               { trackDataDetails?.name }
