@@ -13,6 +13,7 @@
 
   <p align="center">
   <a href="#-Horizonfy"> Sobre</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#-Deploy"> Deploy </a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#-Tecnologias"> Tecnologias </a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#-Funcionalidades"> Funcionalidades  </a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#-Configuração-do-ambiente">  Configuração do Ambiente  </a>&nbsp;&nbsp;
@@ -27,6 +28,8 @@
 ## 🎶 Horizonfy
 Horizonfy é uma aplicação que simula algumas das funcionalidades do mais famoso player de música. Para isso utiliza-se a [API do Spotify](https://developer.spotify.com/documentation/web-api) com o objetivo de resgatar álbuns, faixas de músicas e informações sobre discos de acordo com o interesse do usuário. Além disso também é possível escutar versões demos de algumas das faixas do álbum escolhido.
 
+## 🎉 Deploy
+O projeto foi hospedado na Vercel, e você pode conferir a versão live em [Horizonfy](https://horizonfy.vercel.app/).
 ## 🧪 Tecnologias
 - [React](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/docs/)
@@ -36,6 +39,7 @@ Horizonfy é uma aplicação que simula algumas das funcionalidades do mais famo
 - [Tailwind](https://tailwindcss.com/docs/guides/nextjs)
 - [Axios](https://axios-http.com/)
 - [Radix](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [Vercel](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 - [Phosphor Icons](https://phosphoricons.com/)
 
 ## ✨ Funcionalidades
