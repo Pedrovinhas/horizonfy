@@ -8,10 +8,10 @@ import { api } from '../../services/api';
 interface TrackDetails {
     trackId?: string;
     name: string;
-    popularity: number;
-    track_number: string;
-    duration_ms: number;
-    external_urls: {
+    popularity?: number;
+    track_number?: string;
+    duration_ms?: number;
+    external_urls?: {
         spotify: string;
     }
     preview_url: string;
@@ -125,10 +125,16 @@ export function TrackDetails({ trackId, name, preview_url }: TrackDetails) {
                 </span>
               </div>
               <div className='flex flex-col gap-2 '>
-                <a href={trackDataDetails?.external_urls.spotify} 
-                  target='blank' className='font-medium text-gray-50 underline-offset-2 cursor-pointer transition ease-in-out delay-300 hover:underline  '>
+                {
+                  trackDataDetails?.external_urls?.spotify === undefined 
+                    ? 
+                    <span> Link indisponível </span> 
+                    :  
+                    <a href={trackDataDetails?.external_urls.spotify} 
+                      target='blank' className='font-medium text-gray-50 underline-offset-2 cursor-pointer transition ease-in-out delay-300 hover:underline  '>
                     Escute a música no Spotify
-                </a> 
+                    </a>  }
+               
               </div>
             </div>
           </Dialog.Description>

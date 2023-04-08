@@ -27,7 +27,7 @@ export function Track({ id, name, track_number, duration_ms, preview_url  }: Tra
         </div>
         <div className='flex gap-4'>
           <span className='text-zinc-200 font-light'> {convertMsToMinutesAndSeconds(duration_ms)}</span>
-          <TrackDetails preview_url={preview_url} trackId={id} />
+          <TrackDetails name={name}  preview_url={preview_url} trackId={id} />
         </div>
       </div>
   
