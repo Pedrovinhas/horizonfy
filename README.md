@@ -47,18 +47,22 @@ Horizonfy é uma aplicação que simula algumas das funcionalidades do mais famo
 - [X] Reproduzir música escolhida do álbum
 
 #### Melhorias
-- [] Criar Loading para os components.
-- [] Tela de Login para autenticação do usuário.
-- [] Exibir informações do Spotify do usuário.
-- [] Usar React Query
+- [ ] Criar Loading para os components.
+- [ ] Tela de Login para autenticação do usuário.
+- [ ] Exibir informações do Spotify do usuário.
+- [ ] Usar React Query
 
 
 
 ## 🔧 Como rodar a aplicação
-1. Primeiramente você deve ter o arquivo `.env` configurado na raiz do projeto com as variáveis de ambiente que podem ser criadas através desse [link](https://developer.spotify.com/dashboard/create)
+
+**1.** Primeiramente você deve ter o arquivo `.env` configurado na raiz do projeto com as variáveis de ambiente que podem ser criadas através desse [link](https://developer.spotify.com/dashboard/create)
 na API do Spotify
-2. Em **Redirect URI** preencha com `http://localhost:5173`
-3. Após criado o projeto, você terá acesso aos valores do seu `Client ID` e ao `Client Secret` para serem colocados no arquivo `.env` - confira o exemplo em [env-example](/.env.example)
+
+**2.** Em **Redirect URI** preencha com `http://localhost:5173`
+
+**3.** Após criado o projeto, você terá acesso aos valores do seu `Client ID` e ao `Client Secret` para serem colocados no arquivo `.env` - confira o exemplo em [env-example](/.env.example)
+
 
 **OBS**
 - Para o deploy utilizei as minhas variávies de ambiente.
