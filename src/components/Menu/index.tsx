@@ -15,10 +15,10 @@ export function Menu() {
           <SpotifyLogo size={24} color="#ffffff" weight="fill" />
           <span className='text-gray-50 '> Meu Spotify</span>
         </a>
-        <button className='w-44 items-center justify-start flex ml-4  gap-2  p-2 rounded-md ' aria-details='Link de acesso do github de Pedrovinhas'>
+        <a href='https://github.com/pedrovinhas' target='blank' className='w-44 items-center justify-start flex ml-4  gap-2  p-2 rounded-md ' aria-details='Link de acesso do github de Pedrovinhas'>
           <GithubLogo size={24} color="#ffffff" />
           <span className='text-gray-50 '>Github</span>
-        </button>
+        </a>
         <Link to='/about' className='w-44 items-center justify-start flex ml-4  gap-2  p-2 rounded-md'>
           <Buildings size={24} color="#ffffff" />
           <span className='text-gray-50 '>Sobre</span>
