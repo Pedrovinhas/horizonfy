@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { api } from '../../services/api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { IAlbumTracks } from '../../@types/IAlbumTracks';
@@ -10,18 +10,15 @@ export function Album() {
   const { id, name } = useParams();
   const token = JSON.parse(localStorage.getItem('token') || '{}');
 
-
   const [albumTracks, setAlbumTracks] = useState<IAlbumTracks | null>(null);
   const [trackList, setTrackList] = useState<ITracks[] | null>(null) ;
   
   const fetchAlbumClicked = async() => {
-    const { data } = await axios.get(`https://api.spotify.com/v1/albums/${id}`, {
+    const { data } = await api.get(`/albums/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
     });
-
-    // console.log(data);
 
     setAlbumTracks(data);
     setTrackList(data.tracks.items);
@@ -32,14 +29,9 @@ export function Album() {
 
   const formattedAlbumDuration = formatAlbumDuration(totalAlbumDuration as number);
 
-
   useEffect(() => {
     fetchAlbumClicked();
   }, []);
-
-
-  // console.log(trackList);
-
 
   return (
     <div className="w-full bg-gradient-to-b from-gradient-200 from-0 via-gradient-300 to-gradient-400 w-full flex items-start flex-col max-h-full min-h-screen ">
@@ -90,9 +82,6 @@ export function Album() {
                 track_number={track.track_number} 
                 preview_url={track.preview_url as string} 
                 duration_ms={track.duration_ms}
-                // isPlaying={currentTrack?.id === track.id && isPlaying}
-                // onPlay={() => setIsPlaying(true)}
-                // onPause={() => setIsPlaying(false)}
               />
             </div>
           )
