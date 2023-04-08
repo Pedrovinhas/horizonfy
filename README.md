@@ -14,24 +14,29 @@
   <p align="center">
   <a href="#-Horizonfy"> Sobre</a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#-Tecnologias"> Tecnologias </a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#-Requisitos-da-aplicação"> Requisitos  </a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#-Funcionalidades"> Funcionalidades  </a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#-Configuração-do-ambiente">  Configuração do Ambiente  </a>&nbsp;&nbsp;
 </p>
 
+
+<div align='center'>
+  <img src="./.github/preview.png"/>
+</div>
 
 
 ## 🎶 Horizonfy
 Horizonfy é uma aplicação que simula algumas das funcionalidades do mais famoso player de música. Para isso utiliza-se a [API do Spotify](https://developer.spotify.com/documentation/web-api) com o objetivo de resgatar álbuns, faixas de músicas e informações sobre discos de acordo com o interesse do usuário. Além disso também é possível escutar versões demos de algumas das faixas do álbum escolhido.
 
 ## 🧪 Tecnologias
-- [React]()
-- [TypeScript]()
-- [ESLint]()
-- [NPM]()
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/docs/)
+- [ESLint](https://eslint.org/docs/latest/)
+- [NPM](https://www.npmjs.com/)
 - [Vite](https://vitejs.dev/guide/)
 - [Tailwind](https://tailwindcss.com/docs/guides/nextjs)
-- [Radix](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 - [Axios](https://axios-http.com/)
+- [Radix](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [Phosphor Icons](https://phosphoricons.com/)
 
 ## ✨ Funcionalidades
 - [X] Buscar por álbuns por qualquer termo
@@ -41,18 +46,32 @@ Horizonfy é uma aplicação que simula algumas das funcionalidades do mais famo
 - [X] Ver informações sobre uma faixa específica
 - [X] Reproduzir música escolhida do álbum
 
+#### Melhorias
+- [] Criar Loading para os components.
+- [] Tela de Login para autenticação do usuário.
+- [] Exibir informações do Spotify do usuário.
+- [] Usar React Query
+
 
 
 ## 🔧 Como rodar a aplicação
-Primeiramente deve ter instalado [XAMPP](https://www.apachefriends.org/pt_br/index.html) na máquina, como também o [MYSQL](https://www.mysql.com/downloads/)
+1. Primeiramente você deve ter o arquivo `.env` configurado na raiz do projeto com as variáveis de ambiente que podem ser criadas através desse [link](https://developer.spotify.com/dashboard/create)
+na API do Spotify
+2. Em **Redirect URI** preencha com `http://localhost:5173`
+3. Após criado o projeto, você terá acesso aos valores do seu `Client ID` e ao `Client Secret` para serem colocados no arquivo `.env` - confira o exemplo em [env-example](/.env.example)
+
+**OBS**
+- Para o deploy utilizei as minhas variávies de ambiente.
 
 ```bash
 # Clone o projeto
-$ git clone https://github.com/pedrovinhas/painelcovid.git
+$ git clone https://github.com/pedrovinhas/horizonfy.git
 
-# Mova a 📁api para o diretório 📂xampp/htdocs 
+# Instale as dependências
+$ npm install
 
-# Abra o XAMPP e inicie o Servidor Apache e o MySQL.
+# Rode a aplicação
+$ npm run dev
 
 ```
 
