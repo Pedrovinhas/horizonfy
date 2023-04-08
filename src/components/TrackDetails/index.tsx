@@ -1,12 +1,12 @@
 import { ArrowUpRight, Pause, Play, X } from '@phosphor-icons/react';
 import * as Dialog from '@radix-ui/react-dialog';
-import axios from 'axios';
 import { useEffect, useRef, useState } from 'react';
 import { displayPopularityRating } from '../../utils/popularityRating';
 import { convertMsToMinutesAndSeconds } from '../../utils/convertMsToMinutes';
+import { api } from '../../services/api';
 
 interface TrackDetails {
-    trackId: string;
+    trackId?: string;
     name: string;
     popularity: number;
     track_number: string;
@@ -55,11 +55,8 @@ export function TrackDetails({ trackId, name, preview_url }: TrackDetails) {
     }
   };
 
-
-  console.log(trackId);
-
   const fetchTrackClicked = async() => {
-    const { data } = await axios.get(`https://api.spotify.com/v1/tracks/${trackId}`, {
+    const { data } = await api.get(`/tracks/${trackId}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -73,10 +70,8 @@ export function TrackDetails({ trackId, name, preview_url }: TrackDetails) {
 
   useEffect(() => {
     fetchTrackClicked();
-    console.log('oi');
   }, []);
 
-  console.log(trackDataDetails);
 
 
   return (

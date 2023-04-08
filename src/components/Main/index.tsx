@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import { IAlbum } from '../../@types/IAlbum';
 import { AlbumGrid } from '../AlbumGrid';
+import { api } from '../../services/api';
+import { useAuth } from '../../hooks/useAuth';
 
 export function Main() {
+  const { getAccessToken } = useAuth();
   const [albumName, setAlbumName] = useState('');
   const [albumList, setAlbumList] = useState<IAlbum[] | null>(null);
 
@@ -11,10 +13,8 @@ export function Main() {
     e.preventDefault();
 
     const token = JSON.parse(localStorage.getItem('token') || '{}');
-
-    console.log(token);
-
-    const { data } = await axios.get('https://api.spotify.com/v1/search', {
+  
+    const { data } = await api.get('/search', {
       headers: {
         Authorization: `Bearer ${token}`
       },
@@ -23,31 +23,14 @@ export function Main() {
         type: 'album'
       }
     });
-    
-    console.log(data.albums.items);
+
     setAlbumList(data.albums.items);
   };
 
+  
   useEffect(() => {
-    axios('https://accounts.spotify.com/api/token', {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        Authorization: 'Basic ' + btoa(import.meta.env.VITE_SPOTIFY_CLIENT_ID + ':'  + import.meta.env.VITE_SPOTIFY_CLIENT_SECRET)
-      },
-      data: 'grant_type=client_credentials',
-      method: 'POST'
-    })
-      .then(tokenResponse => {
-        console.log(tokenResponse.data);
-
-        const accessToken = tokenResponse.data.access_token;
-
-        console.log(tokenResponse.data.access_token);
-
-        localStorage.setItem('token', JSON.stringify(accessToken));
-      });
+    getAccessToken();
   }, []);
-
 
   return (
     <main className="bg-linerBlack w-full flex items-start flex-col max-h-full min-h-screen ">
@@ -66,9 +49,9 @@ export function Main() {
         
         {
           albumList?.map(album => 
-            <>
+            <div key={album.id}>
               <AlbumGrid key={album.id} id={album.id} external_urls={album.external_urls}artist={album.artist} release_date={album.release_date} name={album.name} total_tracks={album.total_tracks} images={album.images} />
-            </>)
+            </div>)
         }
       </div>
     </main>
