@@ -16,7 +16,7 @@
   <a href="#-Deploy"> Deploy </a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#-Tecnologias"> Tecnologias </a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#-Funcionalidades"> Funcionalidades  </a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#-Configuração-do-ambiente">  Configuração do Ambiente  </a>&nbsp;&nbsp;
+  <a href="#-Como-rodar-a-aplicação">  Configurações  </a>&nbsp;&nbsp;
 </p>
 
 
@@ -39,7 +39,7 @@ O projeto foi hospedado na Vercel, e você pode conferir a versão live em [Hori
 - [Tailwind](https://tailwindcss.com/docs/guides/nextjs)
 - [Axios](https://axios-http.com/)
 - [Radix](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
-- [Vercel](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [Vercel](https://vercel.com/)
 - [Phosphor Icons](https://phosphoricons.com/)
 
 ## ✨ Funcionalidades
